@@ -4,15 +4,9 @@ import 'package:sj_center/model/carousel_model.dart';
 import '../service/remote_service.dart';
 
 class CarouselController extends GetxController {
-  var carousel = CarouselModel(
-    id: 0,
-    title: "",
-    image: "",
-    createdAt: DateTime.parse("created_at"),
-    updatedAt: DateTime.parse("updated_at"),
-  ).obs;
-
+  var carousel = <CarouselModel>[].obs;
   var isLoading = true.obs;
+
   Future getCarousel() async {
     try {
       isLoading(true);
